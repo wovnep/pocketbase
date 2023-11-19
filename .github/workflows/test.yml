@@ -1,5 +1,5 @@
-name: Testing docker image
-run-name: ${{ github.ref_name }} testing
+name: Test docker image
+run-name: Checking/Testing pocketbase release
 on:
     schedule:
         - cron: '0 0 * * *'

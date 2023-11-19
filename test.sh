@@ -8,7 +8,7 @@ docker run --name pocketbase -d -v ./pb_migrations:/usr/src/app/pb_migrations -p
 sleep 2
 
 # Creating admin account
-docker exec -it pocketbase ./pocketbase admin create $PB_IDENTITY $PB_PASSWORD
+docker exec pocketbase ./pocketbase admin create $PB_IDENTITY $PB_PASSWORD
 sleep 2
 
 response=`curl -sS -X POST \
