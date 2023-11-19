@@ -1,6 +1,3 @@
-#!/usr/bin/bash
-./$PB_PATH/pocketbase migrate --migrationsDir pb_migrations
-
 # Testing migration
 response=`curl -sS -X GET \
     http://$PB_HOST/api/collections/test \

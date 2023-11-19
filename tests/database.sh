@@ -1,5 +1,3 @@
-#!/usr/bin/bash
-
 # Testing create action
 create_response=`curl -sS -X POST \
   http://$PB_HOST/api/collections/test/records \

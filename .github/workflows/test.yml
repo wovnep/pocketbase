@@ -41,4 +41,4 @@ jobs:
           tags: ${{ env.TEST_TAG }}
       - name: Testing the image
         run: |
-          ./test.sh
+          source test.sh

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 export PB_HOST=0.0.0.0:8989
 export PB_IDENTITY=test@example.com
 export PB_PASSWORD=test123456
