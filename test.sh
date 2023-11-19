@@ -4,7 +4,7 @@ export PB_IDENTITY=test@example.com
 export PB_PASSWORD=test123456
 
 # Running docker image
-docker run --name pocketbase -d -v ./pb_migrations:/usr/src/app/pb_migrations -p 8989:8989 wovnep/pockatbase:test serve --http $PB_HOST
+docker run --name pocketbase -d -v ./pb_migrations:/usr/src/app/pb_migrations -p 8989:8989 wovnep/pocketbase:test serve --http $PB_HOST
 sleep 2
 
 # Creating admin account

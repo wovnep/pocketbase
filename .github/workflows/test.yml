@@ -1,4 +1,4 @@
-name: Test
+name: Testing docker image
 run-name: ${{ github.ref_name }} testing
 on:
     schedule:
