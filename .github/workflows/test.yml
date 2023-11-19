@@ -10,10 +10,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - run: npm install semver-compare
       - uses: actions/github-script@v7
         id: set-result
         with:
           script: |
+            const cmp = require('semver-compare')
             const release =  await github.rest.repos.getLatestRelease({
               owner: "pocketbase",
               repo: "pocketbase",
@@ -23,11 +28,11 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             })
-            const tag = tags.data[0].name
-            if(tag == release){
-              core.setFailed(`No new releases found. Latest release: ${version}`);
-            } else {
+            let current_version = tags.data[0]?.name || "0.19.3"
+            if(cmp(version,current_version) == 1){
               return version
+            } else {
+              core.setFailed(`No new releases found. Latest release: ${version}`);
             }
           result-encoding: string
       - name: Checkout
